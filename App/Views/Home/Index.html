@@ -1,5 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl">
 	<head>
+		<meta charset="utf-8"/>
+		<title>Tagging pictures</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="font-awesome css/all.css">
 		<link rel="stylesheet" href="style.css">
@@ -33,7 +36,7 @@
 		</div>
 		<form method="POST">
 			<div class="col-12 changePictureTitle">
-				Oznacz inne zdjęcie
+				Tag other picture
 			</div>
 			{% if filesDest is not empty %}
 					{% for file in filesDest %}
