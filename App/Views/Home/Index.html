@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="font-awesome css/all.css">
+		<link rel="stylesheet" href="style.css">
+		<Script src="https://code.jquery.com/jquery-3.5.1.min.js"></Script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+			<div id="container" class="col-12">
+				<div id="title" class="col-12" >Tagging pictures
+				</div>
+        <div class="modal fade" id="data-tag" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="dropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="dropLabel">Choose Tag</h5>
+              </div>
+              <div class="modal-body">
+                <label><input type="radio" name="type" value="Road sign" class="signType"> Road sign</label><br/>
+				<label><input type="radio" name="type" value="Road lights" class="signType"> Road lights</label><br/>
+				<label><input type="radio" name="type" value="Other" class="signType"> Other</label><br/>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary saveTag" data-dismiss="modal">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+		<img  class="img-fluid" id="img1" src="{{image}}">
+		<div id="sign">
+			{{image}}
+		</div>
+		<form method="POST">
+			<div class="col-12 changePictureTitle">
+				Oznacz inne zdjęcie
+			</div>
+			{% if filesDest is not empty %}
+					{% for file in filesDest %}
+						<div class="col-12 changePicture">
+							<input type="submit" class="button" value={{file}} name="picture"></submit>
+						</div>
+					{% endfor %}
+			{% endif %}
+		</form>
+		<script src="JQuery-plugin.js"></script>
+
+	</body>
+</html>
